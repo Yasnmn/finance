@@ -1,95 +1,122 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import { PiggyBank, CirclePlus, BanknoteArrowDown, BanknoteArrowUp, Utensils, Tv, Car, Dumbbell,} from 'lucide-react';
+import './globals.css';
+
+export default function Dashboard() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div className="dashboard">
+      <header className="topo">
+        <div className="titulo-logo">
+          <PiggyBank size={40} color='#10B981' />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <button className="botao-novo">
+          <CirclePlus size={24} />
+        </button>
+      </header>
+
+      <section className="painel-resumo">
+        <div className="resumo-box entrada">
+          <div className="resumo-topo">
+            <span>Entradas</span>
+            <BanknoteArrowUp size={22} />
+          </div>
+          <strong>R$ 7.840,56</strong>
+          <p>Somadas todas as entradas do período.</p>
+        </div>
+
+        <div className="resumo-box saida">
+          <div className="resumo-topo">
+            <span>Saídas</span>
+            <BanknoteArrowDown size={22} />
+          </div>
+          <strong>R$ 1.580,45</strong>
+          <p>Somadas todas as saídas do período.</p>
+        </div>
+
+        <div className="resumo-box saldo">
+          <div className="resumo-topo">
+            <span>Balanço</span>
+            <BanknoteArrowDown size={22} />
+          </div>
+          <strong>R$ 6.260,11</strong>
+          <p>Somadas todas as entradas e saídas do período.</p>
+        </div>
+      </section>
+
+      <section className="area-graficos">
+        <div className="bloco-grafico">
+          <h2>Análise</h2>
+          <div className="grafico-placeholder"></div>
+        </div>
+
+        <div className="bloco-categorias">
+          <h2>Categorias</h2>
+          <ul className="lista-categorias">
+            <li>
+              <Utensils size={16} />
+              <span>Alimentação</span>
+              <span>R$ 800,00</span>
+            </li>
+            <li>
+              <Tv size={16} />
+              <span>Entretenimento</span>
+              <span>R$ 300,00</span>
+            </li>
+            <li>
+              <Car size={16} />
+              <span>Transporte</span>
+              <span>R$ 520,00</span>
+            </li>
+            <li>
+              <Dumbbell size={16} />
+              <span>Saúde</span>
+              <span>R$ 250,00</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="tabela-transacoes">
+        <h2>Transações</h2>
+        <div className="linha-cabecalho">
+          <span>Item</span>
+          <span>Tipo</span>
+          <span>Valor</span>
+          <span>Data</span>
+          <span>Origem</span>
+        </div>
+
+        <div className="linha-dado">
+          <span>Academia</span>
+          <span>Débito</span>
+          <span className="saida">R$ 150,00</span>
+          <span>03/05/2025</span>
+          <span>Nubank</span>
+        </div>
+
+        <div className="linha-dado">
+          <span>Salário</span>
+          <span>Crédito</span>
+          <span className="entrada">R$ 3.500,00</span>
+          <span>02/05/2025</span>
+          <span>Nubank</span>
+        </div>
+
+        <div className="linha-dado">
+          <span>Netflix</span>
+          <span>Débito</span>
+          <span className="saida">R$ 55,90</span>
+          <span>30/04/2025</span>
+          <span>Nubank</span>
+        </div>
+      </section>
     </div>
   );
 }
+
+
+
+
+  
+  
