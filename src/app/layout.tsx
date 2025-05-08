@@ -2,8 +2,8 @@ import './globals.css'
 import { ReactNode } from 'react'
 
 export const metadata = {
-  title: 'React',
-  description: '',
+  title: 'Finance',
+  /* description: '', */
 }
 
 interface RootLayoutProps {

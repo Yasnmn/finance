@@ -1,6 +1,6 @@
 'use client';
 
-import { PiggyBank, CirclePlus, BanknoteArrowDown, BanknoteArrowUp, Utensils, Tv, Car, Dumbbell,} from 'lucide-react';
+import { PiggyBank, CirclePlus, BanknoteArrowDown, BanknoteArrowUp, Utensils, Tv, Car, Dumbbell } from 'lucide-react';
 import './globals.css';
 
 export default function Dashboard() {
@@ -18,40 +18,40 @@ export default function Dashboard() {
       <section className="painel-resumo">
         <div className="resumo-box entrada">
           <div className="resumo-topo">
-            <span>Entradas</span>
-            <BanknoteArrowUp size={22} />
+            <span className="resumo-texto">Entradas</span>
+            <BanknoteArrowUp size={22} color="#F9FAFB" />
           </div>
           <strong>R$ 7.840,56</strong>
-          <p>Somadas todas as entradas do período.</p>
+          <p className="texto">Somadas todas as entradas do período.</p>
         </div>
 
         <div className="resumo-box saida">
           <div className="resumo-topo">
-            <span>Saídas</span>
-            <BanknoteArrowDown size={22} />
+            <span className="resumo-texto">Saídas</span>
+            <BanknoteArrowDown size={22} color="#F9FAFB" />
           </div>
           <strong>R$ 1.580,45</strong>
-          <p>Somadas todas as saídas do período.</p>
+          <p className="texto">Somadas todas as saídas do período.</p>
         </div>
 
         <div className="resumo-box saldo">
           <div className="resumo-topo">
-            <span>Balanço</span>
-            <BanknoteArrowDown size={22} />
+            <span className="resumo-texto">Balanço</span>
+            <BanknoteArrowDown size={22} color="#F9FAFB" />
           </div>
-          <strong>R$ 6.260,11</strong>
-          <p>Somadas todas as entradas e saídas do período.</p>
+          <strong className="verde">R$ 6.260,11</strong>
+          <p className="texto">Somadas todas as entradas e saídas do período.</p>
         </div>
       </section>
 
       <section className="area-graficos">
         <div className="bloco-grafico">
-          <h2>Análise</h2>
+          <h2 className="Titulo">Análise</h2>
           <div className="grafico-placeholder"></div>
         </div>
 
         <div className="bloco-categorias">
-          <h2>Categorias</h2>
+          <h2 className="Titulo">Categorias</h2>
           <ul className="lista-categorias">
             <li>
               <Utensils size={16} />
@@ -78,45 +78,39 @@ export default function Dashboard() {
       </section>
 
       <section className="tabela-transacoes">
-        <h2>Transações</h2>
+        <h2 className="Titulo">Transações</h2>
         <div className="linha-cabecalho">
-          <span>Item</span>
+          <span>Descrição</span>
           <span>Tipo</span>
           <span>Valor</span>
+          <span>Banco</span>
           <span>Data</span>
-          <span>Origem</span>
         </div>
 
         <div className="linha-dado">
           <span>Academia</span>
           <span>Débito</span>
           <span className="saida">R$ 150,00</span>
-          <span>03/05/2025</span>
           <span>Nubank</span>
+          <span>03/05/2025</span>
         </div>
 
         <div className="linha-dado">
           <span>Salário</span>
           <span>Crédito</span>
           <span className="entrada">R$ 3.500,00</span>
-          <span>02/05/2025</span>
           <span>Nubank</span>
+          <span>02/05/2025</span>
         </div>
 
         <div className="linha-dado">
           <span>Netflix</span>
           <span>Débito</span>
           <span className="saida">R$ 55,90</span>
-          <span>30/04/2025</span>
           <span>Nubank</span>
+          <span>30/04/2025</span>
         </div>
       </section>
     </div>
   );
 }
-
-
-
-
-  
-  
