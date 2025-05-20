@@ -2,6 +2,8 @@
 
 import { PiggyBank, CirclePlus, BanknoteArrowDown, BanknoteArrowUp, Utensils, Tv, Car, Dumbbell } from 'lucide-react';
 import './globals.css';
+import ItemCategoria from './categoria';
+import TransacaoItem from './transacaoItem';
 
 export default function Dashboard() {
   return (
@@ -21,7 +23,7 @@ export default function Dashboard() {
             <span className="resumo-texto">Entradas</span>
             <BanknoteArrowUp size={22} color="#F9FAFB" />
           </div>
-          <strong>R$ 7.840,56</strong>
+          <strong style={{color:'green'}}>R$ 7.840,56</strong>
           <p className="texto">Somadas todas as entradas do período.</p>
         </div>
 
@@ -30,7 +32,7 @@ export default function Dashboard() {
             <span className="resumo-texto">Saídas</span>
             <BanknoteArrowDown size={22} color="#F9FAFB" />
           </div>
-          <strong>R$ 1.580,45</strong>
+          <strong style={{color:'red'}}>R$ 1.580,45</strong>
           <p className="texto">Somadas todas as saídas do período.</p>
         </div>
 
@@ -53,26 +55,10 @@ export default function Dashboard() {
         <div className="bloco-categorias">
           <h2 className="Titulo">Categorias</h2>
           <ul className="lista-categorias">
-            <li>
-              <Utensils size={16} />
-              <span>Alimentação</span>
-              <span>R$ 800,00</span>
-            </li>
-            <li>
-              <Tv size={16} />
-              <span>Entretenimento</span>
-              <span>R$ 300,00</span>
-            </li>
-            <li>
-              <Car size={16} />
-              <span>Transporte</span>
-              <span>R$ 520,00</span>
-            </li>
-            <li>
-              <Dumbbell size={16} />
-              <span>Saúde</span>
-              <span>R$ 250,00</span>
-            </li>
+            <ItemCategoria icon={<Utensils size={16}/>} title='alimentação' price={800}/>
+            <ItemCategoria icon={<Tv size={16} />} title='Entreterimento' price={300} />
+            <ItemCategoria icon={<Car size={16} />} title='transporte' price={520}/>
+            <ItemCategoria icon={<Dumbbell size={16} />} title='Saúde' price={250}/>
           </ul>
         </div>
       </section>
@@ -86,30 +72,30 @@ export default function Dashboard() {
           <span>Banco</span>
           <span>Data</span>
         </div>
+          <TransacaoItem
+            descricao="Academia"
+            tipo="Débito"
+            valor={150}
+            banco="Nubank"
+            data="03/05/2025"
+          />
 
-        <div className="linha-dado">
-          <span>Academia</span>
-          <span>Débito</span>
-          <span className="saida">R$ 150,00</span>
-          <span>Nubank</span>
-          <span>03/05/2025</span>
-        </div>
+          <TransacaoItem
+            descricao="Salário"
+            tipo="Crédito"
+            valor={3500}
+            banco="Nubank"
+            data="02/05/2025"
+          />
 
-        <div className="linha-dado">
-          <span>Salário</span>
-          <span>Crédito</span>
-          <span className="entrada">R$ 3.500,00</span>
-          <span>Nubank</span>
-          <span>02/05/2025</span>
-        </div>
+          <TransacaoItem
+            descricao="Netflix"
+            tipo="Débito"
+            valor={55.9}
+            banco="Nubank"
+            data="30/04/2025"
+          />
 
-        <div className="linha-dado">
-          <span>Netflix</span>
-          <span>Débito</span>
-          <span className="saida">R$ 55,90</span>
-          <span>Nubank</span>
-          <span>30/04/2025</span>
-        </div>
       </section>
     </div>
   );

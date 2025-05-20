@@ -83,7 +83,6 @@ body {
 .bloco-grafico,
 .bloco-categorias {
   flex: 1;
-  background: #000000;
   padding: 16px;
   border-radius: 10px;
 }
@@ -101,16 +100,9 @@ body {
   color: white;
 }
 
-.lista-categorias li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 6px;
-  border-bottom: 1px solid #ffffff;
-}
+
 
 .tabela-transacoes {
-  background-color: #000000;
   padding: 16px;
   border-radius: 10px;
 }
@@ -119,27 +111,15 @@ body {
 .linha-dado {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  padding: 10px 0;
-  color: white;
 }
 
 .linha-cabecalho {
   font-weight: bold;
-  border-bottom: 1px solid #d1d5db;
-  color: #ffffff;
+  color: #7b7b7b;
+  margin: 0.3rem;
 }
 
-.linha-dado {
-  border-bottom: 1px solid #f3f4f6;
-}
 
-.entrada {
-  color: #16a34a;
-}
-
-.saida {
-  color: #dc2626;
-}
 
 .verde {
   color: #16a34a; 
